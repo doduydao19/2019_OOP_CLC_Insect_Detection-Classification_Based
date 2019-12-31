@@ -50,7 +50,6 @@ NUM_CLASSES = 6
 
 # Load the label map.
 # Label maps map indices to category names, so that when our convolution
-# network predicts `5`, we know that this corresponds to `king`.
 # Here we use internal utility functions, but anything that returns a
 # dictionary mapping integers to appropriate string labels would be fine
 label_map = label_map_util.load_labelmap(PATH_TO_LABELS)
