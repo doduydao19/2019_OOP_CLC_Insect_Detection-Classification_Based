@@ -11,8 +11,10 @@ from PIL import Image
 from object_detection.utils import dataset_util
 from collections import namedtuple, OrderedDict
 
+# Path file label_map
 label_map_path = "annotations/label_map.pbtxt"
 
+# Define method read label map
 def read_label_map():
     item_id = None
     item_name = None
@@ -39,8 +41,8 @@ def read_label_map():
 def main(_):
     read_label_map()
     print("done")
-    #generate_tfrecord('images/train_labels.csv', 'images/train', 'annotations/train.record')
-    #generate_tfrecord('images/test_labels.csv', 'images/test', 'annotations/test.record')
+    generate_tfrecord('images/train_labels.csv', 'images/train', 'annotations/train.record')
+    generate_tfrecord('images/test_labels.csv', 'images/test', 'annotations/test.record')
 
 if __name__ == '__main__':
     tf.app.run()
