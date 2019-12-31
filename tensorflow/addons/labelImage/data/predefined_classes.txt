@@ -1,0 +1,6 @@
+Aphid
+BeanLeafBeetle
+CabbageLooper
+ColoradoPotatoBeetle
+Cutworm
+SquashBug
