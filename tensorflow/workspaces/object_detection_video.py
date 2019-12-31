@@ -1,7 +1,6 @@
 ######## Video Object Detection Using Tensorflow-trained Classifier #########
 #
-# Author: Evan Juras
-# Date: 1/16/18
+# Author: daoduydao
 # Description: 
 # This program uses a TensorFlow-trained classifier to perform object detection.
 # It loads the classifier uses it to perform object detection on a video.
@@ -11,8 +10,8 @@
 ## Some of the code is copied from Google's example at
 ## https://github.com/tensorflow/models/blob/master/research/object_detection/object_detection_tutorial.ipynb
 
-## and some is copied from Dat Tran's example at
-## https://github.com/datitran/object_detector_app/blob/master/object_detection_app.py
+## and some is copied from ToTai's example at
+## https://github.com/totai02/TensorFlow-Object-Detection-Train/blob/master/object_detection_video.py
 
 ## but I changed it to make it more understandable to me.
 
@@ -52,7 +51,6 @@ NUM_CLASSES = 6
 
 # Load the label map.
 # Label maps map indices to category names, so that when our convolution
-# network predicts `5`, we know that this corresponds to `king`.
 # Here we use internal utility functions, but anything that returns a
 # dictionary mapping integers to appropriate string labels would be fine
 label_map = label_map_util.load_labelmap(PATH_TO_LABELS)
