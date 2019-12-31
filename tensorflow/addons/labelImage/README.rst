@@ -1,16 +1,6 @@
 LabelImg
 ========
 
-.. image:: https://img.shields.io/pypi/v/labelimg.svg
-        :target: https://pypi.python.org/pypi/labelimg
-
-.. image:: https://img.shields.io/travis/tzutalin/labelImg.svg
-        :target: https://travis-ci.org/tzutalin/labelImg
-
-.. image:: /resources/icons/app.png
-    :width: 200px
-    :align: center
-
 LabelImg is a graphical image annotation tool.
 
 It is written in Python and uses Qt for its graphical interface.
@@ -41,15 +31,6 @@ Linux/Ubuntu/Mac requires at least `Python
 
 Ubuntu Linux
 ^^^^^^^^^^^^
-Python 2 + Qt4
-
-.. code:: shell
-
-    sudo apt-get install pyqt4-dev-tools
-    sudo pip install lxml
-    make qt4py2
-    python labelImg.py
-    python labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
 
 Python 3 + Qt5 (Recommended)
 
@@ -60,112 +41,6 @@ Python 3 + Qt5 (Recommended)
     make qt5py3
     python3 labelImg.py
     python3 labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
-
-macOS
-^^^^^
-Python 2 + Qt4
-
-.. code:: shell
-
-    brew install qt qt4
-    brew install libxml2
-    make qt4py2
-    python labelImg.py
-    python labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
-
-Python 3 + Qt5 (Recommended)
-
-.. code:: shell
-
-    brew install qt  # Install qt-5.x.x by Homebrew
-    brew install libxml2
-
-    or using pip
-
-    pip3 install pyqt5 lxml # Install qt and lxml by pip
-
-    make qt5py3
-    python3 labelImg.py
-    python3 labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
-
-
-Python 3 Virtualenv (Recommended)
-
-Virtualenv can avoid a lot of the QT / Python version issues
-
-.. code:: shell
-
-    brew install python3
-    pip3 install pipenv
-    pipenv --three # or pipenv install pyqt5 lxml
-    pipenv run pip install pyqt5 lxml
-    pipenv run make qt5py3
-    python3 labelImg.py
-    [Optional] rm -rf build dist; python setup.py py2app -A;mv "dist/labelImg.app" /Applications
-
-Note: The Last command gives you a nice .app file with a new SVG Icon in your /Applications folder. You can consider using the script: build-tools/build-for-macos.sh
-
-
-Windows
-^^^^^^^
-
-Install `Python <https://www.python.org/downloads/windows/>`__,
-`PyQt5 <https://www.riverbankcomputing.com/software/pyqt/download5>`__
-and `install lxml <http://lxml.de/installation.html>`__.
-
-Open cmd and go to the `labelImg <#labelimg>`__ directory
-
-.. code:: shell
-
-    pyrcc4 -o line/resources.py resources.qrc
-    For pyqt5, pyrcc5 -o libs/resources.py resources.qrc
-    
-    python labelImg.py
-    python labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
-
-Windows + Anaconda
-^^^^^^^^^^^^^^^^^^
-
-Download and install `Anaconda <https://www.anaconda.com/download/#download>`__ (Python 3+)
-
-Open the Anaconda Prompt and go to the `labelImg <#labelimg>`__ directory
-
-.. code:: shell
-
-    conda install pyqt=5
-    pyrcc5 -o libs/resources.py resources.qrc
-    python labelImg.py
-    python labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
-
-Get from PyPI but only python3.0 or above
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. code:: shell
-
-    pip3 install labelImg
-    labelImg
-    labelImg [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
-
-
-Use Docker
-~~~~~~~~~~~~~~~~~
-.. code:: shell
-
-    docker run -it \
-    --user $(id -u) \
-    -e DISPLAY=unix$DISPLAY \
-    --workdir=$(pwd) \
-    --volume="/home/$USER:/home/$USER" \
-    --volume="/etc/group:/etc/group:ro" \
-    --volume="/etc/passwd:/etc/passwd:ro" \
-    --volume="/etc/shadow:/etc/shadow:ro" \
-    --volume="/etc/sudoers.d:/etc/sudoers.d:ro" \
-    -v /tmp/.X11-unix:/tmp/.X11-unix \
-    tzutalin/py2qt4
-
-    make qt4py2;./labelImg.py
-
-You can pull the image which has all of the installed and required dependencies. `Watch a demo video <https://youtu.be/nw1GexJzbCI>`__
-
 
 Usage
 -----
