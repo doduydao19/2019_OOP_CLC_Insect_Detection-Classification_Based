@@ -1,7 +1,6 @@
 ######## Image Object Detection Using Tensorflow-trained Classifier #########
 #
-# Author: Evan Juras
-# Date: 1/15/18
+# Author: daododuy
 # Description: 
 # This program uses a TensorFlow-trained classifier to perform object detection.
 # It loads the classifier uses it to perform object detection on an image.
@@ -10,8 +9,8 @@
 ## Some of the code is copied from Google's example at
 ## https://github.com/tensorflow/models/blob/master/research/object_detection/object_detection_tutorial.ipynb
 
-## and some is copied from Dat Tran's example at
-## https://github.com/datitran/object_detector_app/blob/master/object_detection_app.py
+## and some is copied from Totai's example at
+## https://github.com/totai02/TensorFlow-Object-Detection-Train/blob/master/object_detection_image.py
 
 ## but I changed it to make it more understandable to me.
 
@@ -86,16 +85,15 @@ detection_classes = detection_graph.get_tensor_by_name('detection_classes:0')
 # Number of objects detected
 num_detections = detection_graph.get_tensor_by_name('num_detections:0')
 
-# Load image using OpenCV and
-# expand image dimensions to have shape: [1, None, None, 3]
-# i.e. a single-column array, where each item in the column has the pixel RGB value
-
+# Load image using OpenCV
+# If the picture is very small, you need to resize it before imshow
 
 image_input = cv2.imread(PATH_TO_IMAGE)
 scale_percent = 200 # percent of original size
 width = int(image_input.shape[1] * scale_percent / 100)
 height = int(image_input.shape[0] * scale_percent / 100)
 dim = (width, height)
+
 # resize image
 image = cv2.resize(image_input, dim, interpolation = cv2.INTER_AREA)
 
@@ -120,8 +118,6 @@ vis_util.visualize_boxes_and_labels_on_image_array(
 
 # All the results have been drawn on image. Now display the image.
 cv2.imshow('Object detector', image)
-print (detection_classes)
-
 
 # Press any key to close the image
 cv2.waitKey(0)
