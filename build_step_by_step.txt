@@ -83,7 +83,6 @@
 # Step 8: Create Folder TensorFlow with the following directory tree :
 	TensorFlow 
 		* addons
-		* models
 		* workspaces 
 	
 # Step 9: Install tool add labels to images
@@ -103,8 +102,10 @@
 	Command line:
 		- cd TensorFlow/
   		- sudo apt install git
-  		- git clone https://github.com/tensorflow/models.git	
-	
+  		- git clone https://github.com/tensorflow/models.git
+		- git clone https://github.com/doduydao19/2019_OOP_CLC_Insect_Detection-Classification_Based.git
+	* models.zip extract to ../workspaces/
+	* ...._Based.
 Open link:https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md?fbclid=IwAR2_StjZVP_lZDFi5Zm-RIcnlFPPNH1qE5quOt-0UJrRzSUYGGS8EFneWn8
 		 Choose and download this mode; ssdlite_mobilenet_v2_coco
 
