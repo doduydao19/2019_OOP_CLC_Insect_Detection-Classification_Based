@@ -1,31 +1,40 @@
-# Despriction
-# Step 1: After installed ubuntu
+
+
+#References link :
+	https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/install.html?fbclid=IwAR2ZjLuRskMlIW9HcuzX7lH9GT4Pcjv2IRPbCEWbFV-T3xqcNCIne1KTD1s#tensorflow-models-installation
+
+# Despriction:
+
+# 1: TensorFlow Installation : 
+	Tensorflow gpu:
+
+	# Step 1: After installed ubuntu
     	Open new terminal
-	Command line: 
-		- sudo apt-get update
+		Command line: 
+			- sudo apt-get update
     		- sudo apt-get upgrade
 
-# Step 2: Install driver nvidia 410 ( depends on the device )
-	Open terminal
-	Command line:
- 		- sudo add-apt-repository ppa:graphics-drivers/ppa
+	# Step 2: Install driver nvidia 410 ( depends on the device )
+		Open terminal
+		Command line:
+ 			- sudo add-apt-repository ppa:graphics-drivers/ppa
     	  	- sudo apt-get update
     	 	- sudo apt-get install nvidia-driver-410
-		- nvidia-smi (check)
+			- nvidia-smi (check)
 
-* We use CUDA for improving performance 
-# Step 3: Install CUDA Toolkit (choose version 10.0 for ubuntu 18.04 )
-	Link download: https://developer.nvidia.com/compute/cuda/10.0/Prod/local_installers/cuda-repo-ubuntu1804-10-0-local-10.0.130-410.48_1.0-1_amd64
+	* We use CUDA for improving performance 
+	# Step 3: Install CUDA Toolkit (choose version 10.0 for ubuntu 18.04 )
+		Link download: https://developer.nvidia.com/compute/cuda/10.0/Prod/local_installers/cuda-repo-ubuntu1804-10-0-local-10.0.130-410.48_1.0-1_amd64
 	
-	Open terminal
-	Note: choose type save file.
-	Command line:
+		Open terminal
+		Note: choose type save file.
+		Command line:
      		- cd Downloads/
      		- sudo dpkg -i cuda-repo-ubuntu1804-10-0-local-10.0.130-410.48_1.0-1_amd64.deb
      		- sudo apt-key add /var/cuda-repo-10-0-local-10.0.130-410.48/7fa2af80.pub
      		- sudo apt-get update
      		- sudo apt-get install cuda
-   		- nano ~/.bashrc
+   			- nano ~/.bashrc
 		In the end of file:
 			Copy:  	
 				export PATH=/usr/local/cuda-10.0/bin:/usr/local/cuda-10.0/NsightCompute-1.0${PATH:+:${PATH}}
@@ -36,35 +45,35 @@
 			Then reboot
 		- nvcc -V     (Check CUDA Version)  
 		
-# Step 4: Setup cuDNN (choose version fit with cuda tool kit, I chosen cuDNN version 7.6.0)
-	Link Download:	https://developer.nvidia.com/rdp/form/cudnn-download-survey
-	When you open link download
+	# Step 4: Setup cuDNN (choose version fit with cuda tool kit, I chosen cuDNN version 7.6.0)
+		-Link Download:	https://developer.nvidia.com/rdp/form/cudnn-download-survey
+		-When you open link download
 		 Join -> Login -> Confirm the information below to complete registration -> cuDNN achrive -> Pick cuDNN version accord CUDA 10.0 -> cuDNN library for 
 
-# Step 5: Linux + cuDNN Runtime , developer , code samples for Ubuntu 18.04.
-  *** note : save file.
-	Open terminal
-	Command line:
-   		- cd Downloads/
-		- sudo tar -xzvf cudnn-10.0-linux-x64-v7.6.1.34.tgz
-   		- sudo dpkg -i libcudnn7_7.6.0.64-1+cuda10.0_amd64.deb
+	# Step 5: Linux + cuDNN Runtime , developer , code samples for Ubuntu 18.04.
+  		*** note : save file.
+		Open terminal
+		Command line:
+   			- cd Downloads/
+			- sudo tar -xzvf cudnn-10.0-linux-x64-v7.6.1.34.tgz
+   			- sudo dpkg -i libcudnn7_7.6.0.64-1+cuda10.0_amd64.deb
     		- sudo dpkg -i libcudnn7-dev_7.6.0.64-1+cuda10.0_amd64.deb
-   		- sudo dpkg -i libcudnn7-doc_7.6.0.64-1+cuda10.0_amd64.deb
-   		- sudo cp cuda/include/cudnn.h /usr/local/cuda/include/
-		- sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
-   		- cd
-   		- sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
-     		Then reboot
+   			- sudo dpkg -i libcudnn7-doc_7.6.0.64-1+cuda10.0_amd64.deb
+   			- sudo cp cuda/include/cudnn.h /usr/local/cuda/include/
+			- sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
+   			- cd
+   			- sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
+     	Then reboot
 		Check :
-   		- cd /usr/src/cudnn_samples_v7/mnistCUDNN/.
-   		- sudo make clean 
-   		- sudo make
-   		- ./mnistCUDNN
+   			- cd /usr/src/cudnn_samples_v7/mnistCUDNN/.
+   			- sudo make clean 
+   			- sudo make
+   			- ./mnistCUDNN
 		If terminal print : test passed >> okay, you passed step 5.
  
-# Step 6: Install Anaconda3:
-	Link Download: https://repo.anaconda.com/archive/
-		(Choose version fit to ubuntu version. I chosen Anaconda3-2018.12-Linux-x86_64.sh file)
+	# Step 6: Install Anaconda3:
+		Link Download: https://repo.anaconda.com/archive/
+			(Choose version fit to ubuntu version. I chosen Anaconda3-2018.12-Linux-x86_64.sh file)
 	Open terminal
 	Command line:
    		- cd Downloads/
@@ -73,142 +82,211 @@
    		- bash ~/Downloads/Anaconda3-2018.12-Linux-x86_64.sh (yes all question)
    		- source ~/.bashrc
 
-# Step 7: Install Tensorflow:
-	Open new Terminal
-	Command line:
-		- conda create -n tf pip python==3.7 (tf is name of enviroment)
-		- conda activate tf  (same tf above)
-		- pip install tensorflow_gpu==1.13.1 (tensorflow with gpu with version 1.13 fit to cuda and cudnn version)
+	# Step 7: Install Tensorflow:
+		Open new Terminal
+		Command line:
+			- conda create -n tf pip python==3.7 (tf is name of enviroment)
+			- conda activate tf  (same tf above)
+			- pip install tensorflow_gpu==1.13.1 (tensorflow with gpu with version 1.13 fit to cuda and cudnn version)
 
-# Step 8: Create Folder TensorFlow with the following directory tree :
-	TensorFlow 
-		* addons
-		* workspaces 
+# 2: TensorFlow Models Installation
 	
-# Step 9: Install tool add labels to images
-	Go to link: https://github.com/tzutalin/labelImg and git lableImage, extrast to addons / rename labelImage
+	# Step 8: Install Prerequisites
+		Open new Terminal
+		Command line:
+  			- sudo apt install python3-pip
+   			- pip3 install numpy==1.16.0 --user
+			- conda activate tf
+  			- pip install cython
+  			- pip install matplotlib
+  			- pip install pillow
+  			- pip install lxml
+  			- pip install jupyter
+  			- pip install opencv-python
+			- pip install pandas
+			
 
-  	Install this tool
+	# Step 10: Install models
+		Open new Terminal
+		Command line:
+			- cd TensorFlow/
+  			- sudo apt install git
+  			- git clone https://github.com/tensorflow/models.git
+			- git clone https://github.com/doduydao19/2019_OOP_CLC_Insect_Detection-Classification_Based.git
 
-	Open new Terminal
-	Command line:
-		- sudo apt-get install pyqt5-dev-tools
-		- cd Tensorflow/addons/labelImg
-		- pip install -r requirements/requirements-linux-python3.txt --user
-		- make qt5py3
+		* extract and rename  
+	 		- models.git extract to TensorFlow and rename to models 
+			- 2019_OOP_CLC_Insect_Detection-Classification_Based.git extract and rename to workspaces
 
-# Step 10: Install models
-	Open new Terminal
-	Command line:
-		- cd TensorFlow/
-  		- sudo apt install git
-  		- git clone https://github.com/tensorflow/models.git
-		- git clone https://github.com/doduydao19/2019_OOP_CLC_Insect_Detection-Classification_Based.git
-	* models.zip extract to ../workspaces/
-	* ...._Based.
-Open link:https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md?fbclid=IwAR2_StjZVP_lZDFi5Zm-RIcnlFPPNH1qE5quOt-0UJrRzSUYGGS8EFneWn8
-		 Choose and download this mode; ssdlite_mobilenet_v2_coco
+		* Directory tree
+			TensorFlow
+				* models (models.git)
+				* workspaces (2019_OOP_CLC_Insect_Detection-Classification_Based.git)
 
-# Step 11: Setup enviroment
-	Open new Terminal
-	Command line:
-		- sudo nano ~/.bashrc  (Edit PATH_TO_TF to correct path, ex: /home/ubuntu)
+	# Step 11: Setup enviroment
+		Open new Terminal
+		Command line:
+			- sudo nano ~/.bashrc  (Edit PATH_TO_TF to correct path, ex: /home/ubuntu)
+				
 			In the end of file:
 				Copy:  
 					export PYTHONPATH=$PYTHONPATH:<PATH_TO_TF>/TensorFlow/models/research/object_detection
 					export PYTHONPATH=$PYTHONPATH:<PATH_TO_TF>/TensorFlow/models/research:<PATH_TO_TF>/TensorFlow/models/research/slim
+			- source ~/.bashrc
+			- cd Tensorflow\models\research
+			- python setup.py build
+				- python setup.py install
+	  		- sudo ldconfig 
+		If error
+		Command line:
+			- sudo ln -sf libcudnn.so.7.4.1 libcudnn.so.7
+			- sudo ln -sf libcudnn.so.7 libcudnn.so
+			- sudo ldconfig
+		Then reboot
 
-		- cd Tensorflow\models\research
-		- python setup.py build
-		- python setup.py install
-  		- sudo ldconfig 
-	If error
-	Command line:
-		- sudo ln -sf libcudnn.so.7.4.1 libcudnn.so.7
-		- sudo ln -sf libcudnn.so.7 libcudnn.so
-		- sudo ldconfig
-	Then reboot
-# Step 12: Install Protobuf
-	Link download: https://github.com/protocolbuffers/protobuf/releases
-	Choose file 3.9.1.zip
-	Unzip from Downloads.
-	Open new Terminal
-	Command line:
- 		- cd TensorFlow/models/research/
-   		- sudo snap install protobuf 
-	If error
-		- sudo apt install protobuf-compiler
-	Then
-		- protoc object_detection/protos/*.proto --python_out=.
+	# Step 12: Protobuf Installation/Compilation
 
-# Step 12: Install pip and numpy
-	Open new Terminal
-	Command line:
-  		- sudo apt install python3-pip
-   		- pip3 install numpy==1.16.0 --user
-
-# Step 13: Install Prerequisites
-	Open new Terminal
-	Command line:
-		- conda activate tf
-  		- pip install cython
-  		- pip install matplotlib
-  		- pip install pillow
-  		- pip install lxml
-  		- pip install jupyter
-  		- pip install opencv-python
-		- pip install pandas
-  	
-Step 14: Install object_detection
-	Copy TensorFlow-Object-Detection-Train to workspace
-
-	- choose file : ssdlite_mobilenet_v2_coco
-	- extract to TensorFlow-Object-Detection-Train/     & Rename == inference_graph
-
-Step 15: Run test with image
-	Open new Terminal
-	Command line:
-		- conda activate tf
-		- cd TensorFlow/workspaces/TensorFlow-Object-Detection-Train
-	3 rename .JPG >>> .jpg (for the first time)
-    		- python object_detection_image.py 
-
-Step 16: Training custom model:
-	- selective model to train
-	- unzip and rename to pre_train_model
-	- create training folder (empty)
-	- choose correct model config file from configs, copy to annotations and correct path to config file
-	- bash size: 8
-	- num_class: depend on your object
-	- annotations/train.record
-	- annotations/label_map.pbtxt
-	- annotations/test.record	
-	- fine_tune_checkpoint: "pre-trained-model/model.ckpt"
-
-Step 17: Edit dupplicate logger
-	- https://stackoverflow.com/questions/50713614/tensorflow-prints-the-same-info-twice-while-training
-	- in file models/research/object_detection/utils/variables_helper_test
-
-Step 18: Training 
-	- using command to train
-	- python train.py --logtostderr --train_dir=training/ --pipeline_config_path=annotations/
-	- ssdlite_mobilenet_v2_coco.config
-
-Step 19: After train, we can export to inference_graph
+		- Link download: https://github.com/protocolbuffers/protobuf/releases
+		- Choose file 3.9.1.zip and unzip from Downloads.
 	
-	Step 19.1. Run on pc:
-		python export_inference_graph.py --input_type image_tensor --pipeline_config_path annotations/ssdlite_mobilenet_v2_coco.config --trained_checkpoint_prefix training/model.ckpt-11635 --output_directory inference_graph
-	
-	Step 19.2. Run on rapberry pi or phone:
-		Run cmd:
-			$:  cp -i /home/pc/TensorFlow/models/research/object_detection/export_tflite_ssd_graph.py /home/pc/TensorFlow/workspaces/object_detection
-			$:  python export_tflite_ssd_graph.py --pipeline_config_path=training/<PATH_MODELS_CONFIG>.config --trained_checkpoint_prefix=training/model.ckpt-<CHECK_POINT> output_directory=tflite --add_postprocessing_op=true
-			$:  tflite_convert --graph_def_file=tflite/tflite_graph.pb --output_file=tflite/detect.tflite --output_format=TFLITE--input_shapes=1,300,300,3 --input_arrays=normalized_input_image_tensor --output_arrays='TFLite_Detection_PostProcess','TFLite_Detection_PostProcess:1','TFLite_Detection_PostProcess:2','TFLite_Detection_PostProcess:3'  --inference_type=QUANTIZED_UINT8 --mean_values=128 --std_dev_values=127 --change_concat_input_ranges=false --allow_custom_ops
+		Open new Terminal
+		Command line:
+	 		- cd TensorFlow/models/research/
+	   		- sudo snap install protobuf 
+		If error
+			- sudo apt install protobuf-compiler
+		Then
+			- protoc object_detection/protos/*.proto --python_out=.
 
-			$: cp -i /home/pc/TensorFlow/addons/labelImg/data/predefined_classes.txt /home/pc/TensorFlow/workspaces/object_detection/tfliteiy
-
-		Then you use to file : DETECT.TFLITE and PREDEFINED_CLASSES.TXT to traing on Tensorflow on rapbberry pi
+	  	
+	# Step 14: Install pre_train model:
 		
---------------- reference link
-https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/install.html?fbclid=IwAR2ZjLuRskMlIW9HcuzX7lH9GT4Pcjv2IRPbCEWbFV-T3xqcNCIne1KTD1s#tensorflow-models-installation
+		- Open link:
+			https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md?fbclid=IwAR2_StjZVP_lZDFi5Zm-RIcnlFPPNH1qE5quOt-0UJrRzSUYGGS8EFneWn8
+		- Choose and download this model: ssdlite_mobilenet_v2_coco
 
+		- extract to TensorFlow-Object-Detection-Train to workspace  AND Rename = pre_trained_model
+
+	# Step 15: Install tool add labels to images
+		- Go to link: https://github.com/tzutalin/labelImg and git lableImage, 
+		- Create Folder TensorFlow:
+			TensorFlow 
+				* addons
+		- Extract to addons and rename to labelImage
+
+		- Open new Terminal
+		- Command line:
+			- sudo apt-get install pyqt5-dev-tools
+			- cd Tensorflow/addons/labelImg
+			- pip install -r requirements/requirements-linux-python3.txt --user
+			- make qt5py3
+
+# 3: Training Custom Object Detector
+	
+	# Step 15 : Preparing workspace, create folders like directory tree:
+
+		workspaces
+			- annotations
+			- images
+   				+ test
+   				+ train
+			- pre_trained_model
+			- training
+			- README.md
+
+	# Step 16 : Annotating images
+		Once you have collected all the images to be used to test your mode, place them inside the folder ..\images
+
+		Into TensorFlow\addons\labelImg
+
+		Open terminal:
+		
+		Command line:	
+			- conda activate tf
+			- python labelImg.py
+	# Step 17 : Creating Label Map
+		- Label map files have the extention .pbtxt and should be placed inside the workspaces\annotations folder.
+		- Example:
+			item {
+    			id: 1
+   				 name: 'cat'
+				}
+
+			item {
+   				 id: 2
+    		name: 'dog'
+				}
+	# Step 18 : Creating TensorFlow Records
+		Into workspace/
+		Open terminal
+		Command line:
+			- conda activate tf
+			- python xml_to_csv.py
+			- python generate_tfrecord.py
+
+	# Step 19 : Configuring a Training Pipeline
+		In folder workspaces\configs , you choose file configure fit with model and copy to folder annotations.
+			In here i choosen file ssd_mobilenet_v2_coco.config
+	
+		Edit file .config:	
+		- num_classes:  (Set this to the number of different label classes)
+		
+		- feature_extractor {
+            type: 'name of model' (Set to the name of your chosen pre-trained model)
+		
+		- bash size: 8 (Increase/Decrease this value depending on the available memory (Higher values require more memory and vice-versa)
+		
+		- fine_tune_checkpoint: "pre_trained_model/model.ckpt" # Path to extracted files of pre-trained model
+		
+		- train_input_reader: {
+    		tf_record_input_reader {
+	        	input_path: "annotations/train.record" # Path to training TFRecord file
+	    	}
+	    	label_map_path: "annotations/label_map.pbtxt" # Path to label map file
+		}	
+
+		- eval_config: {
+	   		num_examples: 8000
+	   		 # Note: The below line limits the evaluation process to 10 evaluations.
+	    	# Remove the below line to evaluate indefinitely.
+	   		max_evals: 10
+		}
+
+		- eval_input_reader: {
+		    tf_record_input_reader {
+		       input_path: "annotations/test.record" # Path to testing TFRecord
+		    }
+		    label_map_path: "annotations/label_map.pbtxt" # Path to label map file
+		    shuffle: false
+		    num_readers: 1
+
+	Step 20: Training 
+		- using command to train
+		- python train.py --logtostderr --train_dir=training/ --pipeline_config_path=annotations/ssdlite_mobilenet_v2_coco.config
+		
+		**note if you see double line like same, you edit dupplicate logger follow link:
+			- https://stackoverflow.com/questions/50713614/tensorflow-prints-the-same-info-twice-while-training
+			- in file models/research/object_detection/utils/variables_helper_test
+
+	Step 21: After train, we can export to inference_graph
+		
+		Step 21.1. Run on pc:
+			python export_inference_graph.py --input_type image_tensor --pipeline_config_path annotations/ssdlite_mobilenet_v2_coco.config --trained_checkpoint_prefix training/model.ckpt-XXXX --output_directory inference_graph
+		***note: XXXX are number represents the training step index at which the file was created.
+		Step 21.2. Run on rapberry pi or phone:
+			Run cmd:
+				$:  cp -i /home/pc/TensorFlow/models/research/object_detection/export_tflite_ssd_graph.py /home/pc/TensorFlow/workspaces/object_detection
+				$:  python export_tflite_ssd_graph.py --pipeline_config_path=training/<PATH_MODELS_CONFIG>.config --trained_checkpoint_prefix=training/model.ckpt-<CHECK_POINT> output_directory=tflite --add_postprocessing_op=true
+				$:  tflite_convert --graph_def_file=tflite/tflite_graph.pb --output_file=tflite/detect.tflite --output_format=TFLITE--input_shapes=1,300,300,3 --input_arrays=normalized_input_image_tensor --output_arrays='TFLite_Detection_PostProcess','TFLite_Detection_PostProcess:1','TFLite_Detection_PostProcess:2','TFLite_Detection_PostProcess:3'  --inference_type=QUANTIZED_UINT8 --mean_values=128 --std_dev_values=127 --change_concat_input_ranges=false --allow_custom_ops
+
+				$: cp -i /home/pc/TensorFlow/addons/labelImg/data/predefined_classes.txt /home/pc/TensorFlow/workspaces/object_detection/tfliteiy
+
+			Then you use to file : DETECT.TFLITE and PREDEFINED_CLASSES.TXT to traing on Tensorflow on rapbberry pi
+
+# 3: Test detection
+	# Step 22: Run test with image (run on pc)
+		Open new Terminal
+		Command line:
+			- conda activate tf
+			- cd TensorFlow/workspaces/
+	    	- python object_detection_image.py 	
