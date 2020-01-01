@@ -5,7 +5,7 @@
   https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/
   
   # Fololow build_step_by_step.txt file: 
-  build_step_by_step.txt
+  https://github.com/doduydao19/2019_OOP_CLC_Insect_Detection-Classification_Based/blob/master/build_step_by_step.txt
 	
 # References:
   # My source code based on ToTai's github,his code on link : 
