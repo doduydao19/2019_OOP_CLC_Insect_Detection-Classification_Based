@@ -20,7 +20,9 @@ Training the Model
     - Run file train.py
 
 Monitor Training Job Progress using TensorBoard
-
+    - Open a new Anaconda/Command Prompt
+        - activate tensorflow_gpu
+        - tensorboard --logdir=training\
 Exporting a Trained Inference Graph
    - Run export_inference_graph.py
    
