@@ -1,32 +1,29 @@
 #Preparing workspace
 ========
-# Annotating images
+Annotating images
     unzip file images.zip and follow directory tree:
         images
             - test
             - train
-# Creating Label Map
-
+Creating Label Map
     label_map.pbtxt
 
-# Creating TensorFlow Records
-
+Creating TensorFlow Records
         - Converting *.xml to *.csv 
-    
             - Run file generate_tfrecord.py
-
         - Converting from *.csv to *.record 
             - Run file xml_to_csv.py
 
-# Configuring a Training Pipeline
+Configuring a Training Pipeline
     - pipeline.config
-# Training the Model 
+Training the Model 
     - Run file train.py
 
-# Monitor Training Job Progress using TensorBoard
+Monitor Training Job Progress using TensorBoard
 
-# Exporting a Trained Inference Graph
+Exporting a Trained Inference Graph
    - Run export_inference_graph.py
+   
 If you want test with 
     - image: Run object_detection_image.py
     - video: Run object_detection_video.py
