@@ -1,5 +1,3 @@
-
-
 #References link :
 	https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/install.html?fbclid=IwAR2ZjLuRskMlIW9HcuzX7lH9GT4Pcjv2IRPbCEWbFV-T3xqcNCIne1KTD1s#tensorflow-models-installation
 
