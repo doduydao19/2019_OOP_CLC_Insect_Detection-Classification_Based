@@ -1,7 +1,10 @@
 #Preparing workspace
 ========
 Annotating images
-
+    unzip file images.zip and follow directory tree:
+        images
+            - test
+            - train
 Creating Label Map
 
 Creating TensorFlow Records
