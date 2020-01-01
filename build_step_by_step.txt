@@ -1,23 +1,20 @@
-Step 1: Install linux
-    	Open terminal
+# Despriction
+# Step 1: After installed ubuntu
+    	Open new terminal
 	Command line: 
 		- sudo apt-get update
     		- sudo apt-get upgrade
-    		Then reboot
 
-Step 2: Install driver nvidia 410 ( depends on the device )
+# Step 2: Install driver nvidia 410 ( depends on the device )
 	Open terminal
 	Command line:
  		- sudo add-apt-repository ppa:graphics-drivers/ppa
     	  	- sudo apt-get update
     	 	- sudo apt-get install nvidia-driver-410
-	 	Then reboot
-    	Open terminal
-	Command line:
 		- nvidia-smi (check)
 
 * We use CUDA for improving performance 
-Step 3: Install CUDA Toolkit (choose version 10.0 for ubuntu 18.04 )
+# Step 3: Install CUDA Toolkit (choose version 10.0 for ubuntu 18.04 )
 	Link download: https://developer.nvidia.com/compute/cuda/10.0/Prod/local_installers/cuda-repo-ubuntu1804-10-0-local-10.0.130-410.48_1.0-1_amd64
 	
 	Open terminal
@@ -33,18 +30,18 @@ Step 3: Install CUDA Toolkit (choose version 10.0 for ubuntu 18.04 )
 			Copy:  	
 				export PATH=/usr/local/cuda-10.0/bin:/usr/local/cuda-10.0/NsightCompute-1.0${PATH:+:${PATH}}
 				export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64\${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-		Then Ctrl + O, Enter
-		Final Ctrl + X
+			Then Ctrl + O, Enter
+			Final Ctrl + X
 		- source ~/.bashrc
-		Then reboot
+			Then reboot
 		- nvcc -V     (Check CUDA Version)  
 		
-Step 4: Setup cuDNN (choose version fit with cuda tool kit, I chosen cuDNN version 7.6.0)
+# Step 4: Setup cuDNN (choose version fit with cuda tool kit, I chosen cuDNN version 7.6.0)
 	Link Download:	https://developer.nvidia.com/rdp/form/cudnn-download-survey
 	When you open link download
 		 Join -> Login -> Confirm the information below to complete registration -> cuDNN achrive -> Pick cuDNN version accord CUDA 10.0 -> cuDNN library for 
 
-Step 5: Linux + cuDNN Runtime , developer , code samples for Ubuntu 18.04.
+# Step 5: Linux + cuDNN Runtime , developer , code samples for Ubuntu 18.04.
   *** note : save file.
 	Open terminal
 	Command line:
@@ -65,7 +62,7 @@ Step 5: Linux + cuDNN Runtime , developer , code samples for Ubuntu 18.04.
    		- ./mnistCUDNN
 		If terminal print : test passed >> okay, you passed step 5.
  
-Step 6: Install Anaconda3:
+# Step 6: Install Anaconda3:
 	Link Download: https://repo.anaconda.com/archive/
 		(Choose version fit to ubuntu version. I chosen Anaconda3-2018.12-Linux-x86_64.sh file)
 	Open terminal
@@ -76,20 +73,20 @@ Step 6: Install Anaconda3:
    		- bash ~/Downloads/Anaconda3-2018.12-Linux-x86_64.sh (yes all question)
    		- source ~/.bashrc
 
-Step 7: Install Tensorflow:
+# Step 7: Install Tensorflow:
 	Open new Terminal
 	Command line:
 		- conda create -n tf pip python==3.7 (tf is name of enviroment)
 		- conda activate tf  (same tf above)
 		- pip install tensorflow_gpu==1.13.1 (tensorflow with gpu with version 1.13 fit to cuda and cudnn version)
 
-Step 8: Create Folder TensorFlow with the following directory tree :
+# Step 8: Create Folder TensorFlow with the following directory tree :
 	TensorFlow 
 		* addons
 		* models
 		* workspaces 
 	
-Step 9: Install tool add labels to images
+# Step 9: Install tool add labels to images
 	Go to link: https://github.com/tzutalin/labelImg and git lableImage, extrast to addons / rename labelImage
 
   	Install this tool
@@ -101,7 +98,7 @@ Step 9: Install tool add labels to images
 		- pip install -r requirements/requirements-linux-python3.txt --user
 		- make qt5py3
 
-Step 10: Install models
+# Step 10: Install models
 	Open new Terminal
 	Command line:
 		- cd TensorFlow/
@@ -111,7 +108,7 @@ Step 10: Install models
 Open link:https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md?fbclid=IwAR2_StjZVP_lZDFi5Zm-RIcnlFPPNH1qE5quOt-0UJrRzSUYGGS8EFneWn8
 		 Choose and download this mode; ssdlite_mobilenet_v2_coco
 
-Step 11: Setup enviroment
+# Step 11: Setup enviroment
 	Open new Terminal
 	Command line:
 		- sudo nano ~/.bashrc  (Edit PATH_TO_TF to correct path, ex: /home/ubuntu)
@@ -130,7 +127,7 @@ Step 11: Setup enviroment
 		- sudo ln -sf libcudnn.so.7 libcudnn.so
 		- sudo ldconfig
 	Then reboot
-Step 12: Install Protobuf
+# Step 12: Install Protobuf
 	Link download: https://github.com/protocolbuffers/protobuf/releases
 	Choose file 3.9.1.zip
 	Unzip from Downloads.
@@ -143,13 +140,13 @@ Step 12: Install Protobuf
 	Then
 		- protoc object_detection/protos/*.proto --python_out=.
 
-Step 12: Install numpy
+# Step 12: Install pip and numpy
 	Open new Terminal
 	Command line:
   		- sudo apt install python3-pip
    		- pip3 install numpy==1.16.0 --user
 
-Step 13: Install Prerequisites
+# Step 13: Install Prerequisites
 	Open new Terminal
 	Command line:
 		- conda activate tf
@@ -197,9 +194,11 @@ Step 18: Training
 	- ssdlite_mobilenet_v2_coco.config
 
 Step 19: After train, we can export to inference_graph
-	1. Run on pc:
+	
+	Step 19.1. Run on pc:
 		python export_inference_graph.py --input_type image_tensor --pipeline_config_path annotations/ssdlite_mobilenet_v2_coco.config --trained_checkpoint_prefix training/model.ckpt-11635 --output_directory inference_graph
-	2. Run on rapberry pi or phone:
+	
+	Step 19.2. Run on rapberry pi or phone:
 		Run cmd:
 			$:  cp -i /home/pc/TensorFlow/models/research/object_detection/export_tflite_ssd_graph.py /home/pc/TensorFlow/workspaces/object_detection
 			$:  python export_tflite_ssd_graph.py --pipeline_config_path=training/<PATH_MODELS_CONFIG>.config --trained_checkpoint_prefix=training/model.ckpt-<CHECK_POINT> output_directory=tflite --add_postprocessing_op=true
