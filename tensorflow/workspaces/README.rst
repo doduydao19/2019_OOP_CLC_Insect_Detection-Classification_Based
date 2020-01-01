@@ -11,11 +11,11 @@
 
 # Creating TensorFlow Records
 
-        Converting *.xml to *.csv 
+        - Converting *.xml to *.csv 
     
             - Run file generate_tfrecord.py
 
-        Converting from *.csv to *.record 
+        - Converting from *.csv to *.record 
             - Run file xml_to_csv.py
 
 # Configuring a Training Pipeline
