@@ -3,7 +3,8 @@
 # Describe:
   # In paper, I followed and learned from link : 
   https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/
-  # Follow : # build_step_by_step.txt file: 
+  
+  # build_step_by_step.txt file: 
   https://github.com/doduydao19/2019_OOP_CLC_Insect_Detection-Classification_Based/blob/master/build_step_by_step.txt
 	
 # References:
