@@ -259,12 +259,14 @@
 		    num_readers: 1
 
 	Step 20: Training 
-		- using command to train
+	- using command to train
 		- python train.py --logtostderr --train_dir=training/ --pipeline_config_path=annotations/ssdlite_mobilenet_v2_coco.config
-		
-		**note if you see double line like same, you edit dupplicate logger follow link:
-			- https://stackoverflow.com/questions/50713614/tensorflow-prints-the-same-info-twice-while-training
-			- in file models/research/object_detection/utils/variables_helper_test
+	- open new terminal:
+		-conda activate tf
+		-tensorboard --logdir=training\
+	**note if you see double line like same, you edit dupplicate logger follow link:
+		- https://stackoverflow.com/questions/50713614/tensorflow-prints-the-same-info-twice-while-training
+		- in file models/research/object_detection/utils/variables_helper_test
 
 	Step 21: After train, we can export to inference_graph
 		
