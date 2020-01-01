@@ -1,6 +1,6 @@
 # 2019_OOP_CLC_Insect_Detection-Classification_Based
 # Author: Daododuy, NguyenKhanhHoa, LeHuy
-# Describe:
+# Description:
   # In paper, I followed and learned from link : 
   https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/
   
