@@ -1,5 +1,6 @@
 #Preparing workspace
 ========
+
 #Annotating images
 
 - Once you have finished annotating your image dataset, it is a general convention to use only part of it for training, and the rest is used for testing purposes. Typically, the ratio is 90%/10%.
@@ -33,6 +34,7 @@ TensorBoard 1.6.0 at http://YOUR-PC:6006 (Press CTRL+C to quit)
 #Exporting a Trained Inference Graph
 
 Open a new Anaconda/Command Prompt
+
 - activate tensorflow_gpu
 
 - python export_inference_graph.py --input_type image_tensor --pipeline_config_path training/ssd_inception_v2_coco.config --trained_checkpoint_prefix training/model.ckpt-13302 --output_directory trained-inference-graphs/output_inference_graph_v1.pb
