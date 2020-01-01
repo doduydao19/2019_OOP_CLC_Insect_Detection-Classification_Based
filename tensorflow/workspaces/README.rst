@@ -6,42 +6,28 @@
             - test
             - train
 # Creating Label Map
-item {
-    id: 1
-    name: 'AphId'
-}
-item {
-    id: 2
-    name: 'BeanLeafBeetle'
-}
-item {
-    id: 3
-    name: 'CabbageLooper'
-}
-item {
-    id: 4
-    name: 'ColoradoPotatoBeetle'
-}
 
-item {
-    id: 5
-    name: 'Cutworm'
-}
-item {
-    id: 6
-    name: 'SquashBug'
-}
+    label_map.pbtxt
 
 # Creating TensorFlow Records
 
-    Converting *.xml to *.csv (run file generate_tfrecord.py)
+        Converting *.xml to *.csv 
+    
+            - Run file generate_tfrecord.py
 
-    Converting from *.csv to *.record (run file xml_to_csv.py)
+        Converting from *.csv to *.record 
+            - Run file xml_to_csv.py
 
 # Configuring a Training Pipeline
-
-# Training the Model (run file train.py)
+    - pipeline.config
+# Training the Model 
+    - Run file train.py
 
 # Monitor Training Job Progress using TensorBoard
 
 # Exporting a Trained Inference Graph
+   - Run export_inference_graph.py
+If you want test with 
+    - image: Run object_detection_image.py
+    - video: Run object_detection_video.py
+    - webcam: Run object_detection_webcam.py
