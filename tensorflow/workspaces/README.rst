@@ -6,6 +6,31 @@
             - test
             - train
 # Creating Label Map
+item {
+    id: 1
+    name: 'AphId'
+}
+item {
+    id: 2
+    name: 'BeanLeafBeetle'
+}
+item {
+    id: 3
+    name: 'CabbageLooper'
+}
+item {
+    id: 4
+    name: 'ColoradoPotatoBeetle'
+}
+
+item {
+    id: 5
+    name: 'Cutworm'
+}
+item {
+    id: 6
+    name: 'SquashBug'
+}
 
 # Creating TensorFlow Records
 
