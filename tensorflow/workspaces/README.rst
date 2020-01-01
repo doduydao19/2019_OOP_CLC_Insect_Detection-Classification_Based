@@ -6,13 +6,13 @@ Creating Label Map
 
 Creating TensorFlow Records
 
-    Converting *.xml to *.csv
+    Converting *.xml to *.csv (run file generate_tfrecord.py)
 
-    Converting from *.csv to *.record
+    Converting from *.csv to *.record (run file xml_to_csv.py)
 
 Configuring a Training Pipeline
 
-Training the Model
+Training the Model (run file train.py)
 
 Monitor Training Job Progress using TensorBoard
 
