@@ -1,0 +1,11 @@
+Preparing workspace
+======
+    Annotating images
+    Creating Label Map
+    Creating TensorFlow Records
+        Converting *.xml to *.csv
+        Converting from *.csv to *.record
+    Configuring a Training Pipeline
+    Training the Model
+    Monitor Training Job Progress using TensorBoard
+    Exporting a Trained Inference Graph
