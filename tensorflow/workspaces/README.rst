@@ -24,7 +24,7 @@ Monitor Training Job Progress using TensorBoard
 Exporting a Trained Inference Graph
    - Run export_inference_graph.py
    
-If you want to test with 
+If you want to test detection with 
     - image: Run object_detection_image.py
     - video: Run object_detection_video.py
     - webcam: Run object_detection_webcam.py
