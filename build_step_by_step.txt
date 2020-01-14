@@ -196,7 +196,7 @@
 		Once you have collected all the images to be used to test your mode, place them inside the folder ..\images
 
 		Into TensorFlow\addons\labelImg
-
+		Read file from README.rst file to learn using.
 		Open terminal:
 		
 		Command line:	
@@ -206,14 +206,14 @@
 		- Label map files have the extention .pbtxt and should be placed inside the workspaces\annotations folder.
 		- Example:
 			item {
-    			id: 1
-   				 name: 'cat'
-				}
+    				id: 1
+   				name: 'Aphid'
+			}
 
 			item {
-   				 id: 2
-    		name: 'dog'
-				}
+   				id: 2
+    				name: 'SquashBug'
+			}
 	# Step 18 : Creating TensorFlow Records
 		Into workspace/
 		Open terminal
@@ -245,8 +245,8 @@
 
 		- eval_config: {
 	   		num_examples: 8000
-	   		 # Note: The below line limits the evaluation process to 10 evaluations.
-	    	# Remove the below line to evaluate indefinitely.
+	   		# Note: The below line limits the evaluation process to 10 evaluations.
+	    		# Remove the below line to evaluate indefinitely.
 	   		max_evals: 10
 		}
 
