@@ -1,4 +1,4 @@
-#References link :
+References link :
 	https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/install.html?fbclid=IwAR2ZjLuRskMlIW9HcuzX7lH9GT4Pcjv2IRPbCEWbFV-T3xqcNCIne1KTD1s#tensorflow-models-installation
 
 # Despriction:
@@ -9,19 +9,19 @@
 	# Step 1: After installed ubuntu
     	Open new terminal
 		Command line: 
-			- sudo apt-get update
+		- sudo apt-get update
     		- sudo apt-get upgrade
 
 	# Step 2: Install driver nvidia 410 ( depends on the device )
 		Open terminal
 		Command line:
- 			- sudo add-apt-repository ppa:graphics-drivers/ppa
+ 		- sudo add-apt-repository ppa:graphics-drivers/ppa
     	  	- sudo apt-get update
     	 	- sudo apt-get install nvidia-driver-410
-			- nvidia-smi (check)
+		- nvidia-smi (check)
 
 	* We use CUDA for improving performance 
-	# Step 3: Install CUDA Toolkit (choose version 10.0 for ubuntu 18.04 )
+	# Step 3: Install CUDA Toolkit (choose version 10.0 for ubuntu 18.04 ) (ìf you using ubuntu 19.10, you can choose v10.0)
 		Link download: https://developer.nvidia.com/compute/cuda/10.0/Prod/local_installers/cuda-repo-ubuntu1804-10-0-local-10.0.130-410.48_1.0-1_amd64
 	
 		Open terminal
@@ -162,7 +162,6 @@
 		- Open link:
 			https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md?fbclid=IwAR2_StjZVP_lZDFi5Zm-RIcnlFPPNH1qE5quOt-0UJrRzSUYGGS8EFneWn8
 		- Choose and download this model: ssdlite_mobilenet_v2_coco
-
 		- extract to TensorFlow-Object-Detection-Train to workspace  AND Rename = pre_trained_model
 
 	# Step 15: Install tool add labels to images
@@ -265,8 +264,7 @@
 		-conda activate tf
 		-tensorboard --logdir=training\
 	**note if you see double line like same, you edit dupplicate logger follow link:
-		- https://stackoverflow.com/questions/50713614/tensorflow-prints-the-same-info-twice-while-training
-		- in file models/research/object_detection/utils/variables_helper_test
+		- https://stackoverflow.com/questions/50713614/tensorflow-prints-the-same-info-twice-while-training- in file models/research/object_detection/utils/variables_helper_test
 
 	Step 21: After train, we can export to inference_graph
 		
