@@ -22,7 +22,7 @@ Training the Model
 
 Monitor Training Job Progress using TensorBoard
     - Open a new Anaconda/Command Prompt
-        - activate tensorflow_gpu
+        - activate tensorflow gpu
         - tensorboard --logdir=training\
         
 Exporting a Trained Inference Graph
