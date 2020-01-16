@@ -1,0 +1,4 @@
+requests
+python-firebase
+validate_email
+google-cloud-storage
